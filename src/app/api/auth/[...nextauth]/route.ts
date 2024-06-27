@@ -1,14 +1,6 @@
-import NextAuth from "next-auth";
-import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import GoogleProvider from "next-auth/providers/google";
+import NextAuth, { getServerSession, NextAuthOptions } from "next-auth";
+import { authOptions } from "@/app/lib/authOptions";
 
-export default NextAuth({
-  providers: [
-    GoogleProvider({
-      clientId: process.env.OAUTH_CLIENT_ID ?? "",
-      clientSecret: process.env.OAUTH_CLIENT_SECRET ?? "",
-    }),
-  ],
-});
+const handler = NextAuth(authOptions);
 
-export { NextAuth as GET, NextAuth as POST };
+export { handler as GET, handler as POST };
