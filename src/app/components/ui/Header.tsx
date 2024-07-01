@@ -23,7 +23,7 @@ export default function Header() {
       </ul>
 
       <nav className="flex items-center">
-        <Link href={"/register"}>
+        <Link href={"/signin"}>
           <UserRound
             size={45}
             strokeWidth={1.25}

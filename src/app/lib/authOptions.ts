@@ -31,16 +31,6 @@ export const providers = [
 
 export const authOptions: NextAuthOptions = {
   providers: providers,
-  session: {
-    strategy: "jwt",
-    maxAge: 1 * 24 * 60 * 60,
-  },
-  jwt: {},
-  callbacks: {},
-  pages: {
-    signIn: "/signin",
-  },
-  adapter: MongoDBAdapter(clientPromise),
 };
 
 export function getAuth() {

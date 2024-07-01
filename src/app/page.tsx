@@ -1,12 +1,10 @@
 import { Rock_Salt } from "next/font/google";
 import clsx from "clsx";
-import { run } from "@/mongodb";
 import Header from "./components/ui/Header";
 
 const rockSalt = Rock_Salt({ weight: ["400"], subsets: ["latin"] });
 
 export default function Home() {
-  run().catch(console.dir);
   return (
     <>
       <Header></Header>
